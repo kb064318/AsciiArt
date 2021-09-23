@@ -1,5 +1,9 @@
 # AsciiArt
 
+## maintainer
+
+- Kane-Louderback
+
 ## Developers:
 
 - kb064381
