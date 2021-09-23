@@ -20,3 +20,7 @@ Framework - Kivy
 Library - Python Image Library
 
 Team roles - TBD
+
+Documentation Tool - Doxygen
+
+Build System - None planned at the moment.
