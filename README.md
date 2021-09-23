@@ -1,5 +1,6 @@
 # AsciiArt
 
+
 ## maintainer
 
 - Kane-Louderback
@@ -14,8 +15,27 @@
 
 ## Project Description
 
-an app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It should hopefully work across multiple platforms and with videos as well.
+An app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It should hopefully work across multiple platforms and with videos as well.
 
 ## Meeting Times
 
 - M/W at 7:00pm
+
+## Tools
+Tools that will be used:
+
+Python - Programming language
+
+Visual Studio / Others - IDEs
+
+Version control - Git
+
+Framework - Kivy
+
+Library - Python Image Library
+
+Team roles - TBD
+
+Documentation Tool - Doxygen
+
+Build System - None planned at the moment.
