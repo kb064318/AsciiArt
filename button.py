@@ -1,15 +1,30 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
+from kivy.uix.label import Label
 from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
 from kivy.lang.builder import Builder
 from kivy.core.image import Image
 from plyer import filechooser
 
-class LayoutScreen(Widget):
-    pass
+class LayoutScreen(GridLayout):
+    def __init__(self, **kwargs):
+        super(LayoutScreen, self).__init__(**kwargs)
+        self.cols = 3
+        self.add_widget(Label(text="image1"))
+        self.add_widget(Label())
+        self.add_widget(Label(text="image2"))
+        self.add_widget(Label(text="image3"))
+        btn = SelectButton()
+        btn.bind(on_press=btn.choose_file)
+        self.add_widget(btn)
+        self.add_widget(Label(text="image4"))
+        self.add_widget(Label(text="image5"))
+        self.add_widget(Label())
+        self.add_widget(Label(text="image6"))
 
-class SelectButton(Widget):
-    def choose_file(self):
+class SelectButton(Button):
+    def choose_file(self, val):
         path = filechooser.open_file(title="Select a Photo", 
                              filters=[("Photos", "*.png")])
         print(path)
@@ -19,7 +34,7 @@ class SelectButton(Widget):
 
 class ButtonMain(App): 
     def build(self):
-        Builder.load_file('button.kv')
-        return SelectButton()
+        #Builder.load_file('button.kv')
+        return LayoutScreen()
 
 ButtonMain().run()
