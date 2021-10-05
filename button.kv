@@ -1,0 +1,10 @@
+<SelectButton>
+    Button:
+        on_press: path = root.choose_file()
+        pos: root.width / 2, root.height / 2
+        background_down: "buttonInProgress.png"
+        background_normal: "buttonInProgress.png"
+
+<LayoutScreen>
+    BoxLayout:
+        SelectButton
