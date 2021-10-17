@@ -1,0 +1,17 @@
+
+<MyLayout>
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'retrobackground2.jpg'
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Image:
+            source: 'buttonInProgress.png'
+            allow_strech: True
+            keep_ratio: False
