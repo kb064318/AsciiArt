@@ -8,31 +8,33 @@ from kivy.core.image import Image
 from kivy.config import Config
 from plyer import filechooser
 
+# Front-End Design. - Lets us organize the GUI.
 class LayoutScreen(GridLayout):
     def __init__(self, **kwargs):
         super(LayoutScreen, self).__init__(**kwargs)
-        self.cols = 3
-        self.add_widget(Label(text="image1"))
+        self.cols = 3                   # Creates three columns for the widgets to occupy.
+        self.add_widget(Label(text="")) 
         self.add_widget(Label())
-        self.add_widget(Label(text="image2"))
-        self.add_widget(Label(text="image3"))
+        self.add_widget(Label(text=""))
+        self.add_widget(Label(text=""))
         btn = SelectButton()
         btn.bind(on_press=btn.choose_file)
         self.add_widget(btn)
-        self.add_widget(Label(text="image4"))
-        self.add_widget(Label(text="image5"))
+        self.add_widget(Label(text=""))
+        self.add_widget(Label(text=""))
         self.add_widget(Label())
-        self.add_widget(Label(text="image6"))
+        self.add_widget(Label(text=""))
 
 # Returns pixel RGB value of an image at specified coordinates
 def get_pixel(img, x, y):
     color = img.read_pixel(x, y)
     return color[0] * 255, color[1] * 255, color[2] * 255
 
+# Back-end for file browse button.
 class SelectButton(Button):
     def choose_file(self, val):
         # Opens file chooser
-        filePath = filechooser.open_file(title="Select a Photo", 
+        filePath = filechooser.open_file(title="Select a Photo to convert", 
                              filters=[("Photos", "*.png")])
         # Declares img as the image picked
         print(*filePath)
@@ -42,9 +44,9 @@ class SelectButton(Button):
             for j in range (0, img.size[1]):
                 print(i, j, get_pixel(img, i, j))
 
-class ButtonMain(App): 
+class ASCIIArt(App): 
     def build(self):
         #Builder.load_file('button.kv')
         return LayoutScreen()
 
-ButtonMain().run()
+ASCIIArt().run()
