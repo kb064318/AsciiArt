@@ -4,23 +4,43 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.lang.builder import Builder
-from kivy.core.image import Image
-from plyer import filechooser
+from PIL import Image, ImageDraw, ImageFont
 
-from PIL import Image
-
-class algorithm():
-    im = Image.open('octopus.jpg',  'r')
+def algorithm(path):
+    im = Image.open(path,  'r')
     width, height = im.size
     pix_val = list(im.getdata())
+    ascii_string = ""
+    print("Converting photo to ascii... (May take a while)")
     for x in range(len(pix_val)):
         if(x % width == 0):
-            print("")
+            ascii_string += "\n"
         if (pix_val[x][0] < 126):
             #black
-            print('M',end="")
+            ascii_string += "M"
         else:
-            #white 
-            print(" ", end="") 
+            #white
+            # This amount of spaces is required to make the photo look normal
+            ascii_string += "    "
+    im.close()
+    return ascii_string
         
-        
+'''
+Converts text to png file and saves it to photo_name. Having this in the same
+file as a function that uses kivy.core.image causes namespace problems.
+'''
+def text_to_image(path, ascii_string, photo_name):
+    print("Saving image...")
+    
+    # Gets width and height of image
+    im = Image.open(path,  'r')
+    width, height = im.size
+    im.close()
+
+    # Generates an image based on the contents of ascii_string and saves it
+    ascii_font = ImageFont.truetype('calibri.ttf', 10)
+    ascii_image = Image.new(mode = "RGB", size = (width*9, height*12))
+    draw_ascii = ImageDraw.Draw(ascii_image)
+    draw_ascii.text((0, 0), ascii_string, font = ascii_font, fill=(width, height, 0))
+    ascii_image.save(photo_name)
+    return ascii_image
