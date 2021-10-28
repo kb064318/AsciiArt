@@ -10,12 +10,12 @@ from plyer import filechooser
 from PIL import Image
 
 class algorithm():
-    im = Image.open('octopus.jpg',  'r')
+    im = Image.open('octopus.jpg',  'r') # Test images: smileyFace.jpg / octopus.jpg / zig-zag.jpg
     width, height = im.size
     pix_val = list(im.getdata())
     for x in range(len(pix_val)):
         if(x % width == 0):
-            print("")
+            print("") #adds a line break at the end of each line
         if (pix_val[x][0] < 126):
             #black
             print('M',end="")
