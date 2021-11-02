@@ -33,21 +33,14 @@ class SelectButton(Button):
         # Opens file chooser
         file_path = filechooser.open_file(title="Select a Photo to convert", 
                              filters=[("Photos", "*.jpg")])
-        #print(*filePath)
-        # Declares img as the image picked
-        img = Image.load(*file_path, keep_data=True)
         # Runs the algorithm from pixelConversionAlgorithm
         ascii_string = algorithm(*file_path)
         # Path to save image to
         photo_name = "ASCII_art.png"
         # Converts ASCII to image. text_to_image is imported from pixelConversionAlgorithm
-        ascii_image = text_to_image(*file_path, ascii_string, photo_name)
+        text_to_image(*file_path, ascii_string, photo_name)
         # Opens created image
         os.system(photo_name)
-        # Prints all pixel RGB values in file
-        #for i in range(0, img.size[0]):
-        #    for j in range (0, img.size[1]):
-        #        print(i, j, get_pixel(img, i, j))
 
 class ASCIIArt(App): 
     def build(self):

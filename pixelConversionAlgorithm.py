@@ -39,8 +39,8 @@ def text_to_image(path, ascii_string, photo_name):
 
     # Generates an image based on the contents of ascii_string and saves it
     ascii_font = ImageFont.truetype('calibri.ttf', 10)
-    ascii_image = Image.new(mode = "RGB", size = (width*9, height*12))
+    ascii_image = Image.new(mode="RGB", size=(width*9, height*12), color=(255, 255, 255))
     draw_ascii = ImageDraw.Draw(ascii_image)
-    draw_ascii.text((0, 0), ascii_string, font = ascii_font, fill=(width, height, 0))
+    draw_ascii.text(xy=(0, 0), text=ascii_string, font=ascii_font, fill=(0, 0, 0))
     ascii_image.save(photo_name)
     return ascii_image
