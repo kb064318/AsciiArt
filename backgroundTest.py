@@ -1,12 +1,13 @@
 from kivy.app import App
-from kivy.uix.widget import Widget
+from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.core.window import Window
 
 Builder.load_file('backgroundTest.kv')
 
-class MyLayout(Widget):
-    pass
+class MyLayout(BoxLayout):
+    def __init__(self, **kwargs):
+        super(MyLayout, self).__init__(**kwargs)
 
 class AwesomeApp(App):
     def build(self):

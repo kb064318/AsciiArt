@@ -1,17 +1,46 @@
-
-<MyLayout>
+<SelectButton@Button>:
+    Image:
+        source: 'buttonInProgress.png'
+        allow_strech: True
+        keep_ratio: False
+        pos: self.parent.pos
+        size: self.parent.size
+        
+<MyLayout@BoxLayout>:
+    orientation: 'horizontal'
 
     canvas.before:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'retrobackground2.jpg'
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Image1'
+        Label:
+            text: 'Image2'
+        Label:
+            text: 'Image3'
 
     BoxLayout:
-        orientation: "vertical"
-        size: root.width, root.height
-
-        Image:
-            source: 'buttonInProgress.png'
-            allow_strech: True
-            keep_ratio: False
+        orientation: 'vertical'
+        Label:
+            text: ''
+        SelectButton:
+            id: 'selectbutton'
+            pos_hint:{'center_x':0.5, 'center_y':0.5}
+            size_hint: 0.45, 0.11
+        Label:
+            text: ''
+            
+        
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Image4'
+        Label:
+            text: 'Image5'
+        Label:
+            text: 'Image6'
