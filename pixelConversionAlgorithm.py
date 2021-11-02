@@ -21,7 +21,7 @@ def algorithm(path):
         else:
             #white
             # This amount of spaces is required to make the photo look normal
-            ascii_string += "    "
+            ascii_string += " "
     im.close()
     return ascii_string
         
@@ -38,7 +38,7 @@ def text_to_image(path, ascii_string, photo_name):
     im.close()
 
     # Generates an image based on the contents of ascii_string and saves it
-    ascii_font = ImageFont.truetype('calibri.ttf', 10)
+    ascii_font = ImageFont.truetype('cour.ttf', 10) # courier new is the base font
     ascii_image = Image.new(mode="RGB", size=(width*9, height*12), color=(255, 255, 255))
     draw_ascii = ImageDraw.Draw(ascii_image)
     draw_ascii.text(xy=(0, 0), text=ascii_string, font=ascii_font, fill=(0, 0, 0))
