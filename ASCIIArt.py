@@ -30,6 +30,9 @@ def get_pixel_gray(img, x, y):
     gray = img.read_pixel(x, y)
     return (gray[0]*0.299) + (gray[1]*0.587) + (gray[2]*0.114)
 
+#class Title(TitleImage):
+
+
 # Back-end for file browse button.
 class SelectButton(Button):
     def choose_file(self):

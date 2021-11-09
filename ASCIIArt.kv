@@ -5,9 +5,11 @@
         keep_ratio: False
         pos: self.parent.pos
         size: self.parent.size
+    
         
 <LayoutScreen@BoxLayout>:
     orientation: 'horizontal'
+
 
     canvas.before:
         Rectangle:
@@ -29,8 +31,10 @@
 
     BoxLayout:
         orientation: 'vertical'
-        Label:
-            text: ''
+        Image:
+            source: 'invertedTitlefix2.png'
+            allow_strech: True
+            keep_ratio: False
         SelectButton:
             id: selectbtn
             pos_hint:{'center_x':0.5, 'center_y':0.5}
