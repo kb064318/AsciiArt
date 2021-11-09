@@ -15,9 +15,51 @@ def algorithm(path):
     for x in range(len(pix_val)):
         if(x % width == 0):
             ascii_string += "\n"
-        if (pix_val[x][0] < 126):
+        if (pix_val[x][0] < 17):
+            #black
+            ascii_string += "A"
+        elif (pix_val[x][0] < 34):
+            #black
+            ascii_string += "B"
+        elif (pix_val[x][0] < 51):
+            #black
+            ascii_string += "C"
+        elif (pix_val[x][0] < 68):
+            #black
+            ascii_string += "D"
+        elif (pix_val[x][0] < 85):
+            #black
+            ascii_string += "E"
+        elif (pix_val[x][0] < 102):
+            #black
+            ascii_string += "F"
+        elif (pix_val[x][0] < 119):
+            #black
+            ascii_string += "G"
+        elif (pix_val[x][0] < 136):
+            #black
+            ascii_string += "H"
+        elif (pix_val[x][0] < 153):
+            #black
+            ascii_string += "I"
+        elif (pix_val[x][0] < 170):
+            #black
+            ascii_string += "J"
+        elif (pix_val[x][0] < 187):
+            #black
+            ascii_string += "K"
+        elif (pix_val[x][0] < 204):
+            #black
+            ascii_string += "L"
+        elif (pix_val[x][0] < 221):
             #black
             ascii_string += "M"
+        elif (pix_val[x][0] < 238):
+            #black
+            ascii_string += "N"
+        elif (pix_val[x][0] < 255):
+            #black
+            ascii_string += "O"
         else:
             #white
             # This amount of spaces is required to make the photo look normal
