@@ -5,9 +5,12 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang.builder import Builder
 from kivy.core.image import Image
 from kivy.config import Config
+from kivy.resources import resource_add_path, resource_find
 from plyer import filechooser
 from pixelConversionAlgorithm import algorithm, text_to_image
 import os
+import sys
+import threading
 
 # Front-End Design. - Lets us organize the GUI.
 class LayoutScreen(BoxLayout):
@@ -30,6 +33,12 @@ def get_pixel_gray(img, x, y):
 # Back-end for file browse button.
 class SelectButton(Button):
     def choose_file(self):
+        # Tells the user the image is loading
+        App.get_running_app().root.ids.label_loading.text = "Loading Image..."
+        # Runs choose_file_threaded on another thread. Without this, the label is not updated until after the function is complete.
+        threading.Thread(target=self.choose_file_threaded).start()
+        
+    def choose_file_threaded(self):
         # Opens file chooser
         file_path = filechooser.open_file(title="Select a Photo to convert", 
                              filters=[("Photos", "*.jpg")])
@@ -41,9 +50,15 @@ class SelectButton(Button):
         text_to_image(*file_path, ascii_string, photo_name)
         # Opens created image
         os.system(photo_name)
+        # Removes label_loading text
+        App.get_running_app().root.ids.label_loading.text = ""
 
 class ASCIIArt(App): 
     def build(self):
         return LayoutScreen()
 
-ASCIIArt().run()
+# Helps this app be converted into an executable
+if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
+    ASCIIArt().run()
