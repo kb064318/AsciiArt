@@ -42,22 +42,23 @@ class SelectButton(Button):
         # Opens file chooser
         file_path = filechooser.open_file(title="Select a Photo to convert", 
                              filters=[("Photos", "*.jpg")])
-        # Runs the algorithm from pixelConversionAlgorithm
-        ascii_string = algorithm(*file_path)
-        # Path to save image to
-        photo_name = "ASCII_art.png"
-        # Converts ASCII to image. text_to_image is imported from pixelConversionAlgorithm
-        text_to_image(*file_path, ascii_string, photo_name)
-        # Opens created image
-        os.system(photo_name)
-        # Removes label_loading text
+        if len(file_path) != 0:
+            # Runs the algorithm from pixelConversionAlgorithm
+            ascii_string = algorithm(*file_path)
+            # Path to save image to
+            photo_name = "ASCII_art.png"
+            # Converts ASCII to image. text_to_image is imported from pixelConversionAlgorithm
+            text_to_image(*file_path, ascii_string, photo_name)
+            # Opens created image
+            os.system(photo_name)
+            # Removes label_loading text
         App.get_running_app().root.ids.label_loading.text = ""
 
 class ASCIIArt(App): 
     def build(self):
         return LayoutScreen()
 
-# Helps this app be converted into an executable
+# Helps this app be converted into a standalone executable
 if __name__ == '__main__':
     if hasattr(sys, '_MEIPASS'):
         resource_add_path(os.path.join(sys._MEIPASS))
