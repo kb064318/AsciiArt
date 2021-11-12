@@ -12,7 +12,9 @@ import os
 import sys
 import threading
 
-# Front-End Design. - Lets us organize the GUI.
+'''
+Front-End Design. - Lets us organize the GUI.
+'''
 class LayoutScreen(BoxLayout):
     def __init__(self, **kwargs):
         super(LayoutScreen, self).__init__(**kwargs)
@@ -20,12 +22,16 @@ class LayoutScreen(BoxLayout):
         btn = self.ids.selectbtn # selectbtn is the id of the button object in the .kv file
         btn.bind(on_press=SelectButton.choose_file)
 
-# Returns pixel RGB value of an image at specified coordinates
+'''
+Returns pixel RGB value of an image at specified coordinates
+'''
 def get_pixel(img, x, y):
     color = img.read_pixel(x, y)
     return color[0] * 255, color[1] * 255, color[2] * 255
 
-# Returns the grayscale value of a pixel (white = 0, black = 1)
+'''
+Returns the grayscale value of a pixel (white = 0, black = 1)
+'''
 def get_pixel_gray(img, x, y):
     gray = img.read_pixel(x, y)
     return (gray[0]*0.299) + (gray[1]*0.587) + (gray[2]*0.114)
@@ -33,7 +39,9 @@ def get_pixel_gray(img, x, y):
 #class Title(TitleImage):
 
 
-# Back-end for file browse button.
+'''
+Back-end for file browse button.
+'''
 class SelectButton(Button):
     def choose_file(self):
         # Tells the user the image is loading
@@ -44,7 +52,7 @@ class SelectButton(Button):
     def choose_file_threaded(self):
         # Opens file chooser
         file_path = filechooser.open_file(title="Select a Photo to convert", 
-                             filters=[("Photos", "*.jpg")])
+                    filters=[("Photos", "*.jpg")])
         if len(file_path) != 0:
             # Runs the algorithm from pixelConversionAlgorithm
             ascii_string = algorithm(*file_path)
@@ -61,7 +69,9 @@ class ASCIIArt(App):
     def build(self):
         return LayoutScreen()
 
-# Helps this app be converted into a standalone executable
+'''
+Helps this app be converted into a standalone executable
+'''
 if __name__ == '__main__':
     if hasattr(sys, '_MEIPASS'):
         resource_add_path(os.path.join(sys._MEIPASS))
