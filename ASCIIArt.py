@@ -52,7 +52,7 @@ class SelectButton(Button):
     def choose_file_threaded(self):
         # Opens file chooser
         file_path = filechooser.open_file(title="Select a Photo to convert", 
-                    filters=[("Photos", "*.jpg")])
+                    filters=[("Photos", "*.jpg", "*.png")])
         if len(file_path) != 0:
             # Runs the algorithm from pixelConversionAlgorithm
             ascii_string = algorithm(*file_path)
