@@ -83,12 +83,12 @@ def text_to_image(path, ascii_list, photo_name):
     im.close()
 
     # Gets font path and size
-    current_path = os.path.dirname(__file__)
-    font_path = os.path.join(current_path, 'Font/DeferralSquare.ttf')
+    this_file_path = os.path.dirname(__file__)
+    font_path = os.path.join(this_file_path, 'Font/DeferralSquare.ttf')
     font_size = 8 # Currently, only size 8 font works correctly
     
     # Generates an image based on the contents of ascii_string and saves it
-    ascii_font = ImageFont.truetype(font_path, font_size) # courier new is the base font
+    ascii_font = ImageFont.truetype(font_path, font_size) # Deferral Square is the base font
     ascii_image = Image.new(mode="RGB", size=(width*font_size, height*font_size), color=(255, 255, 255))
     draw_ascii = ImageDraw.Draw(ascii_image)
     for x in range(len(ascii_list)): # Draws every ascii_string in ascii_list, with a y position that makes each character equally spaced
