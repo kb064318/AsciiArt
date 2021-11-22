@@ -29,12 +29,7 @@ def get_pixel(img, x, y):
     color = img.read_pixel(x, y)
     return color[0] * 255, color[1] * 255, color[2] * 255
 
-'''
-Returns the grayscale value of a pixel (white = 0, black = 1)
-'''
-def get_pixel_gray(img, x, y):
-    gray = img.read_pixel(x, y)
-    return (gray[0]*0.299) + (gray[1]*0.587) + (gray[2]*0.114)
+
 
 #class Title(TitleImage):
 

@@ -11,6 +11,8 @@ def algorithm(path):
     im = Image.open(path,  'r')
     width, height = im.size
     pix_val = list(im.getdata())
+    for pix in pix_val:
+        pix = get_pixel_gray(pix)
     ascii_list = []
     ascii_string = ""
     print("Converting photo to ascii... (May take a while)")
@@ -70,6 +72,12 @@ def algorithm(path):
     im.close()
     return ascii_list
         
+'''
+Returns the grayscale value of a pixel (white = 0, black = 1)
+'''
+def get_pixel_gray(pixel):
+    return (pixel[0]*0.299) + (pixel[1]*0.587) + (pixel[2]*0.114)
+
 '''
 Converts text to png file and saves it to photo_name. Having this in the same
 file as a function that uses kivy.core.image causes namespace problems.
