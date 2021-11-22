@@ -21,51 +21,88 @@ def algorithm(path):
             # Adds each string as a separate element in ascii_list. Used to set the space between each line of text in text_to_image()
             ascii_list.append(ascii_string)
             ascii_string = ""
-        if (pix_val[x][0] < 17):
-            #black
-            ascii_string += "A"
-        elif (pix_val[x][0] < 34):
-            #black
-            ascii_string += "B"
-        elif (pix_val[x][0] < 51):
-            #black
-            ascii_string += "C"
-        elif (pix_val[x][0] < 68):
-            #black
-            ascii_string += "D"
-        elif (pix_val[x][0] < 85):
-            #black
-            ascii_string += "E"
-        elif (pix_val[x][0] < 102):
-            #black
-            ascii_string += "F"
-        elif (pix_val[x][0] < 119):
-            #black
-            ascii_string += "G"
-        elif (pix_val[x][0] < 136):
-            #black
-            ascii_string += "H"
-        elif (pix_val[x][0] < 153):
-            #black
-            ascii_string += "I"
-        elif (pix_val[x][0] < 170):
-            #black
-            ascii_string += "J"
-        elif (pix_val[x][0] < 187):
-            #black
-            ascii_string += "K"
-        elif (pix_val[x][0] < 204):
-            #black
-            ascii_string += "L"
-        elif (pix_val[x][0] < 221):
-            #black
+        if (pix_val[x][0] < 16):
             ascii_string += "M"
-        elif (pix_val[x][0] < 238):
-            #black
+        elif (pix_val[x][0] < 24):
             ascii_string += "N"
-        elif (pix_val[x][0] < 255):
-            #black
+        elif (pix_val[x][0] < 36):
+   
+            ascii_string += "B"
+        elif (pix_val[x][0] < 42):
+
+            ascii_string += "X"
+        elif (pix_val[x][0] < 50):
+     
+            ascii_string += "K"
+        elif (pix_val[x][0] < 58):
+         
+            ascii_string += "R"
+        elif (pix_val[x][0] < 66):
+       
+            ascii_string += "A"
+        elif (pix_val[x][0] < 72):
+        
+            ascii_string += "H"
+        elif (pix_val[x][0] < 80):
+       
+            ascii_string += "E"
+        elif (pix_val[x][0] < 88):
+      
+            ascii_string += "G"
+        elif (pix_val[x][0] < 96):
+        
+            ascii_string += "Q"
+        elif (pix_val[x][0] < 104):
+        
+            ascii_string += "Y"
+        elif (pix_val[x][0] < 112):
+      
+            ascii_string += "Z"
+        elif (pix_val[x][0] < 120):
+         
+            ascii_string += "S"
+        elif (pix_val[x][0] < 128):
+         
+            ascii_string += "P"
+        elif (pix_val[x][0] < 136):
+      
+            ascii_string += "D"
+        elif (pix_val[x][0] < 144):
+       
             ascii_string += "O"
+        elif (pix_val[x][0] < 152):
+         
+            ascii_string += "V"
+        elif (pix_val[x][0] < 160):
+         
+            ascii_string += "U"
+        elif (pix_val[x][0] < 168):
+          
+            ascii_string += "C"
+        elif (pix_val[x][0] < 176):
+         
+            ascii_string += "T"
+        elif (pix_val[x][0] < 184):
+           
+            ascii_string += "F"
+        elif (pix_val[x][0] < 192):
+          
+            ascii_string += "L"
+        elif (pix_val[x][0] < 200):
+           
+            ascii_string += "J"
+        elif (pix_val[x][0] < 208):
+          
+            ascii_string += "I"
+        elif (pix_val[x][0] < 216):
+          
+            ascii_string += "/"
+        elif (pix_val[x][0] < 224):
+         
+            ascii_string += "*"
+        elif (pix_val[x][0] < 232):
+           
+            ascii_string += "."
         else:
             #white
             ascii_string += " "
