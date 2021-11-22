@@ -1,12 +1,3 @@
-<SelectButton@Button>:
-    Image:
-        source: 'Images/buttonInProgress.png'
-        allow_strech: True
-        keep_ratio: False
-        pos: self.parent.pos
-        size: self.parent.size
-    
-        
 <LayoutScreen@BoxLayout>:
     orientation: 'horizontal'
 
@@ -35,8 +26,9 @@
             source: 'Images/invertedTitlefix2.png'
             allow_strech: True
             keep_ratio: False
-        SelectButton:
+        Button:
             id: selectbtn
+            background_normal: 'Images/buttonInProgress.png'
             pos_hint:{'center_x':0.5, 'center_y':0.5}
             size_hint: 0.45, 0.11
         Label:
