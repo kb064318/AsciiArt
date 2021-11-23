@@ -62,6 +62,7 @@ class SelectButton(Button):
 
 class ASCIIArt(App): 
     def build(self):
+        self.title = "ASCII Art Generator"
         return LayoutScreen()
 
 '''
