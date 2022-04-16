@@ -1,0 +1,52 @@
+<SelectButton@Button>:
+    background_normal: 'Images/buttonInProgress.png'
+
+<LayoutScreen@BoxLayout>:
+    orientation: 'horizontal'
+
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Images/retrobackground2.jpg'
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: img1
+            text: 'Image1'
+        Label:
+            id: img2
+            text: 'Image2'
+        Label:
+            id: img3
+            text: 'Image3'
+
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'Images/invertedTitlefix2.png'
+            allow_strech: True
+            keep_ratio: False
+        SelectButton:
+            id: selectbtn
+            pos_hint:{'center_x':0.5, 'center_y':0.5}
+            size_hint: 0.45, 0.11
+        Label:
+            id: label_loading
+            font_size: '25dp'
+            text: ''
+            
+        
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: img4
+            text: 'Image4'
+        Label:
+            id: img5
+            text: 'Image5'
+        Label:
+            id: img6
+            text: 'Image6'
