@@ -15,7 +15,7 @@
 
 ## Project Description
 
-An app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It should hopefully work across multiple platforms and with videos as well.
+An app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It will work across multiple platforms and with videos as well.
 
 ## Meeting Times
 
@@ -34,8 +34,4 @@ Framework - Kivy
 
 Library - Python Image Library
 
-Team roles - TBD
-
 Documentation Tool - Doxygen
-
-Build System - None planned at the moment.
