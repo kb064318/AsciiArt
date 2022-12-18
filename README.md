@@ -1,6 +1,10 @@
 # AsciiArt
 
 
+## Project Description:
+
+An app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It will work across multiple platforms and with videos as well.
+
 ## Maintainer:
 
 - Kane-Louderback
@@ -12,10 +16,6 @@
 - StandingFuture
 - Kane-Louderback
 - ts331117
-
-## Project Description:
-
-An app/program that will allow you to take a picture or select an existing image file, and convert the image into ascii characters. It will work across multiple platforms and with videos as well.
 
 ## Meeting Times:
 
